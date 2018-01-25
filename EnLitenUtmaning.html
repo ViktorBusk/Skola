@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
 
-<img src="b.jpg"
-
 <body>
 
-<h2>Singla Slant!</h2>
+<h2 id= "headline" style = "color:blue;" style="font-size:60px;">Singla Slant!<h2> 
 
 <p>Antal krona</p>
 
+<p id="kronaTxt" style="font-size:12px;">  </p>
+
 <p>Antal Klave</p>
 
-<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+<p id="klaveTxt" style="font-size:12px;">  </p>
 
-<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+<button type="button" onclick="random()">Random</button>
 
-<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+<script>
+
+var summaKrona = 0;
+var summaKlave = 0;
+
+function random(){
+
+var slump = Math.floor((Math.random() * 10) + 1);
+
+if(slump <= 5){
+    ++summaKrona;
+    document.getElementById("display").src = "b.jpg"; //krona
+    document.getElementById("kronaTxt").innerHTML = summaKrona;
+}else{
+    ++summaKlave;
+    document.getElementById("display").src = "a.jpg"; //klave
+    document.getElementById("klaveTxt").innerHTML = summaKlave;
+    }
+}
+</script>
+
+<img id="display" src="c.jpg" style="width:300px"/>
 
 </body>
 </html>
-
